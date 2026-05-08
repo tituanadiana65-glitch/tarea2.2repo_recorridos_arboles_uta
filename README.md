@@ -98,10 +98,10 @@ tarea2.2 repo_recorridos_arboles_uta/
 
 **C++:
 ```bash
-g++ ejercicios.cpp -o programa
-./programa
+g++ ejercicios.cpp -o ejercicios
+./ejercicios
 
 **java:
-javac Ejercicios.java
+javac Ejercicio.java
 java Ejercicios
 
