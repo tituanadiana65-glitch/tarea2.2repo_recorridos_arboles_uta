@@ -28,6 +28,35 @@ class ModuloWeb {
 
 public class Ejercicio {
 
+    //funcion para agregar nodo
+    public static void agregarNodo(Nodo raiz, int valor) {
+        if(raiz==null)return; 
+            
+        Queue<Nodo> cola= new LinkedList<>();
+        cola.add(raiz);
+        while (!cola.isEmpty()) {
+            Nodo actual=cola.poll();
+             //izquierda
+             if (actual.izquierda==null) {
+                actual.izquierda=new Nodo(valor);
+               
+                return;  
+             }else{
+                cola.add(actual.izquierda);
+             }
+             //derecha
+             if (actual.derecha==null) {
+                actual.derecha=new Nodo(valor);
+               
+                return;  
+             }else{
+                cola.add(actual.derecha);
+             }
+            
+        }
+        
+    }
+
     // ========== RECORRIDOS ==========
     public static void preorden(Nodo raiz) {
         if (raiz == null) return;
@@ -138,13 +167,15 @@ public class Ejercicio {
         System.out.println();
 
         // Agregar nodos: 1, 3, 18, 25
-        raiz.izquierda.izquierda.izquierda = new Nodo(1);
-        raiz.izquierda.izquierda.derecha = new Nodo(3);
-        raiz.derecha.derecha.izquierda = new Nodo(18);
-        raiz.derecha.derecha.derecha = new Nodo(25);
+        agregarNodo(raiz, 1);
+        agregarNodo(raiz, 3);
+        agregarNodo(raiz, 18);
+        agregarNodo(raiz, 25);
+        agregarNodo(raiz, 30);
+        agregarNodo(raiz, 40);
 
         System.out.println("\n--- EJERCICIO 2 (Arbol modificado) ---");
-        System.out.println("Nuevos nodos agregados: 1, 3, 18, 25");
+        System.out.println("Nuevos nodos agregados: 1, 3, 18, 25, 30, 40");
         System.out.print("Preorden: ");
         preorden(raiz);
         System.out.print("\nInorden: ");

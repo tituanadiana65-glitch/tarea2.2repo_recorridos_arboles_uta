@@ -13,6 +13,37 @@ struct Nodo {
         derecha = nullptr;
     }
 };
+//funcion para agregar nodod
+void agregarNodo(Nodo*raiz, int valor){
+    if(raiz==nullptr) return;
+
+    queue<Nodo*>cola;
+    cola.push(raiz);
+
+    while(!cola.empty()){
+        Nodo*actual=cola.front();
+        cola.pop();
+
+        //izquierda
+        if(actual->izquierda==nullptr){
+            actual->izquierda= new Nodo(valor);
+           
+            return;
+        }else{
+            cola.push(actual->izquierda);
+        }
+        //derecha
+        if(actual->derecha==nullptr){
+            actual->derecha= new Nodo(valor);
+            
+            return;
+        }else{
+            cola.push(actual->derecha);
+        }
+    }
+
+    
+}
 
 // ========== RECORRIDOS ==========
 void preorden(Nodo* raiz) {
@@ -139,14 +170,16 @@ int main() {
     cout << endl;
 
     // Agregar nodos: 1, 3, 18, 25
-    raiz->izquierda->izquierda->izquierda = new Nodo(1);
-    raiz->izquierda->izquierda->derecha = new Nodo(3);
-    raiz->derecha->derecha->izquierda = new Nodo(18);
-    raiz->derecha->derecha->derecha = new Nodo(25);
+    agregarNodo(raiz, 1);
+    agregarNodo(raiz, 3);
+    agregarNodo(raiz, 18);
+    agregarNodo(raiz, 25);
+    agregarNodo(raiz, 30);
+    agregarNodo(raiz, 40);
 
 
     cout << "\n--- EJERCICIO 2 (Arbol modificado) ---" << endl;
-    cout << "Nuevos nodos agregados: 1, 3, 18, 25" << endl;
+    cout << "Nuevos nodos agregados: 1, 3, 18, 25, 30, 40" << endl;
     cout << "Preorden: ";
     preorden(raiz);
     cout << "\nInorden: ";
