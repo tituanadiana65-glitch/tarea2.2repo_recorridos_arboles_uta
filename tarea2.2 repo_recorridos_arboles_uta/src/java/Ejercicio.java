@@ -13,7 +13,7 @@ class Nodo {
     }
 }
 
-// Clase para el Ejercicio 5
+// Clase para el sistema
 class ModuloWeb {
     String nombre;
     ModuloWeb izquierda;
@@ -94,20 +94,20 @@ public class Ejercicio {
         }
     }
 
-    // ========== EJERCICIO 3: CONTAR NODOS ==========
+    // ========== CONTAR NODOS ==========
     public static int contarNodos(Nodo raiz) {
         if (raiz == null) return 0;
         return 1 + contarNodos(raiz.izquierda) + contarNodos(raiz.derecha);
     }
 
-    // ========== EJERCICIO 4: CONTAR HOJAS ==========
+    // ========== CONTAR HOJAS ==========
     public static int contarHojas(Nodo raiz) {
         if (raiz == null) return 0;
         if (raiz.izquierda == null && raiz.derecha == null) return 1;
         return contarHojas(raiz.izquierda) + contarHojas(raiz.derecha);
     }
 
-    // ========== EJERCICIO 5: SISTEMA WEB ==========
+    // ========== SISTEMA WEB ==========
     public static void preordenWeb(ModuloWeb raiz) {
         if (raiz == null) return;
         System.out.print(raiz.nombre + " -> ");
@@ -155,7 +155,7 @@ public class Ejercicio {
         raiz.derecha.izquierda = new Nodo(12);
         raiz.derecha.derecha = new Nodo(20);
 
-        System.out.println("\n--- EJERCICIO 1 (Arbol original) ---");
+        System.out.println("\n--- Arbol original ---");
         System.out.print("Preorden: ");
         preorden(raiz);
         System.out.print("\nInorden: ");
@@ -172,10 +172,10 @@ public class Ejercicio {
         agregarNodo(raiz, 18);
         agregarNodo(raiz, 25);
         agregarNodo(raiz, 30);
-        agregarNodo(raiz, 40);
+        agregarNodo(raiz, 42);
 
-        System.out.println("\n--- EJERCICIO 2 (Arbol modificado) ---");
-        System.out.println("Nuevos nodos agregados: 1, 3, 18, 25, 30, 40");
+        System.out.println("\n--- Arbol modificado ---");
+        System.out.println("Nuevos nodos agregados: 1, 3, 18, 25, 30, 42");
         System.out.print("Preorden: ");
         preorden(raiz);
         System.out.print("\nInorden: ");
@@ -187,15 +187,15 @@ public class Ejercicio {
         System.out.println();
 
         // ========== EJERCICIO 3 ==========
-        System.out.println("\n--- EJERCICIO 3: Contar nodos totales ---");
+        System.out.println("\n--- Contar nodos totales ---");
         System.out.println("Total de nodos en el arbol: " + contarNodos(raiz));
 
         // ========== EJERCICIO 4 ==========
-        System.out.println("\n--- EJERCICIO 4: Contar hojas ---");
+        System.out.println("\n---  Contar hojas ---");
         System.out.println("Total de hojas en el arbol: " + contarHojas(raiz));
 
         // ========== EJERCICIO 5 ==========
-        System.out.println("\n--- EJERCICIO 5: Sistema Web (Proyecto Final) ---");
+        System.out.println("\n--- Sistema Web  ---");
 
         ModuloWeb sistema = new ModuloWeb("Sistema Web");
         sistema.izquierda = new ModuloWeb("Usuarios");

@@ -13,7 +13,7 @@ struct Nodo {
         derecha = nullptr;
     }
 };
-//funcion para agregar nodod
+//funcion para agregar nodos
 void agregarNodo(Nodo*raiz, int valor){
     if(raiz==nullptr) return;
 
@@ -84,20 +84,20 @@ void bfs(Nodo* raiz) {
     }
 }
 
-// ========== EJERCICIO 3: CONTAR NODOS ==========
+// ==========CONTAR NODOS ==========
 int contarNodos(Nodo* raiz) {
     if (raiz == nullptr) return 0;
     return 1 + contarNodos(raiz->izquierda) + contarNodos(raiz->derecha);
 }
 
-// ========== EJERCICIO 4: CONTAR HOJAS ==========
+// ========== CONTAR HOJAS ==========
 int contarHojas(Nodo* raiz) {
     if (raiz == nullptr) return 0;
     if (raiz->izquierda == nullptr && raiz->derecha == nullptr) return 1;
     return contarHojas(raiz->izquierda) + contarHojas(raiz->derecha);
 }
 
-// ========== EJERCICIO 5: SISTEMA WEB ==========
+// ========== SISTEMA WEB ==========
 struct ModuloWeb {
     string nombre;
     ModuloWeb* izquierda;
@@ -158,7 +158,7 @@ int main() {
     raiz->derecha->izquierda = new Nodo(12);
     raiz->derecha->derecha = new Nodo(20);
 
-    cout << "\n--- EJERCICIO 1 (Arbol original) ---" << endl;
+    cout << "\n---------- Arbol original ---------" << endl;
     cout << "Preorden: ";
     preorden(raiz);
     cout << "\nInorden: ";
@@ -169,17 +169,17 @@ int main() {
     bfs(raiz);
     cout << endl;
 
-    // Agregar nodos: 1, 3, 18, 25
+    // Agregar nodos
     agregarNodo(raiz, 1);
     agregarNodo(raiz, 3);
     agregarNodo(raiz, 18);
     agregarNodo(raiz, 25);
     agregarNodo(raiz, 30);
-    agregarNodo(raiz, 40);
+    agregarNodo(raiz, 42);
 
 
-    cout << "\n--- EJERCICIO 2 (Arbol modificado) ---" << endl;
-    cout << "Nuevos nodos agregados: 1, 3, 18, 25, 30, 40" << endl;
+    cout << "\n----------- Arbol modificado ---------" << endl;
+    cout << "Nuevos nodos agregados: 1, 3, 18, 25, 30, 42" << endl;
     cout << "Preorden: ";
     preorden(raiz);
     cout << "\nInorden: ";
@@ -190,16 +190,16 @@ int main() {
     bfs(raiz);
     cout << endl;
 
-    // ========== EJERCICIO 3 ==========
-    cout << "\n--- EJERCICIO 3: Contar nodos totales ---" << endl;
+    // ========== contar nodos ==========
+    cout << "\n---------- Contar nodos totales -------" << endl;
     cout << "Total de nodos en el arbol: " << contarNodos(raiz) << endl;
 
-    // ========== EJERCICIO 4 ==========
-    cout << "\n--- EJERCICIO 4: Contar hojas ---" << endl;
+    // ========== contar hojas ==========
+    cout << "\n---------- Contar hojas ----------" << endl;
     cout << "Total de hojas en el arbol: " << contarHojas(raiz) << endl;
 
-    // ========== EJERCICIO 5 ==========
-    cout << "\n--- EJERCICIO 5: Sistema Web (Proyecto Final) ---" << endl;
+    // ========== sistema ==========
+    cout << "\n------------ Sistema Web  -----------" << endl;
 
     ModuloWeb* sistema = new ModuloWeb("Sistema Web");
     sistema->izquierda = new ModuloWeb("Usuarios");
