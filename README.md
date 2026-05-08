@@ -16,7 +16,7 @@ Implementar y analizar los principales recorridos de árboles binarios mediante 
       5    15
      / \   / \
     2   7 12 20
-```
+
 
 ### Árbol Modificado (Ejercicio 2)
 Se agregaron los nodos: 1, 3, 18, 25, 30, 42
@@ -74,7 +74,26 @@ Se modela un sistema web como árbol binario:
 | Procesar módulos internos | Inorden | Procesa submódulos antes que el módulo padre |
 | Mostrar por niveles | BFS | Organización jerárquica clara y visual |
 
-
+Estructura del proyecto 
+tarea2.2 repo_recorridos_arboles_uta/
+├── docs/                
+├── exercises/           
+├── moodle/              
+├── src/                 
+│   ├── cpp/             
+│   │   ├── ejercicios.cpp
+│   │   ├── main.cpp
+│   │   ├── ejercicios.exe
+│   │   └── recorridos.exe
+│   └── java/            
+│       ├── Ejercicio.java
+│       ├── Main.java
+│       ├── ModuloWeb.class
+│       ├── Nodo.class
+│       └── ... (archivos .class generados)
+├── LICENSE             
+└── README.md            
+└── README.md            
 ## Cómo ejecutar
 
 **C++:
@@ -86,4 +105,3 @@ g++ ejercicios.cpp -o programa
 javac Ejercicios.java
 java Ejercicios
 
-##
